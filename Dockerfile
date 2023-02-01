@@ -51,12 +51,3 @@ RUN apt-get --yes update && \
       pkg-config \
       nodejs && \
     rm -rf /var/lib/apt/lists/*
-
-WORKDIR /root
-COPY Gemfile .
-COPY Gemfile.lock .
-RUN bundle install
-
-COPY package.json .
-COPY package-lock.json .
-RUN npm install
