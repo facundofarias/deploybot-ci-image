@@ -33,6 +33,9 @@ jobs:
         push: true
         tags: facundofarias/deploybot-ci-image:1.0.0
 
+    - name: Image digest 1.0
+      run: echo ${{ steps.docker_build_1_0.outputs.digest }}
+
     - name: Build and push 2.0
       id: docker_build_2_0
       uses: docker/build-push-action@v2
@@ -42,5 +45,5 @@ jobs:
         push: true
         tags: facundofarias/deploybot-ci-image:2.0.0
 
-    - name: Image digest
-      run: echo ${{ steps.docker_build.outputs.digest }}
+    - name: Image digest 2.0
+      run: echo ${{ steps.docker_build_2_0.outputs.digest }}
