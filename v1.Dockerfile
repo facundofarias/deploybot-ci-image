@@ -38,6 +38,9 @@ RUN chmod +x /etc/profile.d/rbenv.sh
 RUN mkdir /usr/local/rbenv/plugins
 RUN git clone https://github.com/sstephenson/ruby-build.git /usr/local/rbenv/plugins/ruby-build
 
+# Update the PATH env
+ENV PATH /root/.rbenv/shims:/usr/local/rbenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
 # Install Ruby 2.0.0
 RUN rbenv install 2.0.0-p648
 RUN rbenv global 2.0.0-p648
@@ -56,6 +59,3 @@ RUN apt-get --yes update && \
       pkg-config \
       nodejs && \
     rm -rf /var/lib/apt/lists/*
-
-# Update the PATH env
-ENV PATH /root/.rbenv/shims:/usr/local/rbenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
