@@ -60,3 +60,5 @@ RUN apt-get --yes update && \
       pkg-config \
       nodejs && \
     rm -rf /var/lib/apt/lists/*
+
+CMD ["bash"]

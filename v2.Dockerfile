@@ -61,3 +61,5 @@ RUN apt-get --yes update && \
       unzip \
       nodejs && \
     rm -rf /var/lib/apt/lists/*
+
+CMD ["bash"]
