@@ -46,7 +46,7 @@ RUN rbenv install 2.7.6
 RUN rbenv global 2.7.6
 
 # Install bundler
-RUN gem install bundler -v 1.17.3
+RUN gem install bundler -v 2.1.4
 
 # Install project dependencies
 RUN apt-get --yes update && \
