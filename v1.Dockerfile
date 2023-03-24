@@ -52,7 +52,7 @@ RUN gem install bundler -v 1.17.3
 # Install project dependencies
 RUN apt-get --yes update && \
     apt-get install --yes --allow-unauthenticated \
-      libmysqlclient-dev \
+      default-libmysqlclient-dev \
       libicu-dev \
       libcurl3 \
       libcurl4-openssl-dev \
