@@ -1,4 +1,4 @@
-FROM debian:8
+FROM debian:9
 
 ENV DEBIAN_FRONTEND=non-interactive
 
