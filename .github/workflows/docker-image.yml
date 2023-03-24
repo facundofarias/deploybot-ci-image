@@ -24,26 +24,38 @@ jobs:
       id: buildx
       uses: docker/setup-buildx-action@v1
 
-    - name: Build and push 1.0
-      id: docker_build_1_0
+    - name: Build and push 2.0.0
+      id: docker_build_2_0_0
       uses: docker/build-push-action@v2
       with:
         context: ./
         file: ./v1.Dockerfile
         push: true
-        tags: facundofarias/deploybot-ci-image:1.0.0
+        tags: facundofarias/deploybot-ci-image:2.0.0
 
-    - name: Image digest 1.0
-      run: echo ${{ steps.docker_build_1_0.outputs.digest }}
+    - name: Image digest 2.0.0
+      run: echo ${{ steps.docker_build_2_0_0.outputs.digest }}
 
-    - name: Build and push 2.0
-      id: docker_build_2_0
+    - name: Build and push 2.3.7
+      id: docker_build_2_3_7
+      uses: docker/build-push-action@v2
+      with:
+        context: ./
+        file: ./v3.Dockerfile
+        push: true
+        tags: facundofarias/deploybot-ci-image:2.3.7
+
+    - name: Image digest 2.3.7
+      run: echo ${{ steps.docker_build_2_3_7.outputs.digest }}
+
+    - name: Build and push 2.7.6
+      id: docker_build_2_7_6
       uses: docker/build-push-action@v2
       with:
         context: ./
         file: ./v2.Dockerfile
         push: true
-        tags: facundofarias/deploybot-ci-image:2.0.0
+        tags: facundofarias/deploybot-ci-image:2.7.6
 
-    - name: Image digest 2.0
-      run: echo ${{ steps.docker_build_2_0.outputs.digest }}
+    - name: Image digest 2.7.6
+      run: echo ${{ steps.docker_build_2_7_6.outputs.digest }}
