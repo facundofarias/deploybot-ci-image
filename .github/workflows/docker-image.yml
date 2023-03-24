@@ -31,7 +31,7 @@ jobs:
         context: ./
         file: ./v1.Dockerfile
         push: true
-        tags: facundofarias/deploybot-ci-image:2.0.0
+        tags: facundofarias/deploybot-ci-image:ruby-2.0.0
 
     - name: Image digest 2.0.0
       run: echo ${{ steps.docker_build_2_0_0.outputs.digest }}
@@ -43,7 +43,7 @@ jobs:
         context: ./
         file: ./v3.Dockerfile
         push: true
-        tags: facundofarias/deploybot-ci-image:2.3.7
+        tags: facundofarias/deploybot-ci-image:ruby-2.3.7
 
     - name: Image digest 2.3.7
       run: echo ${{ steps.docker_build_2_3_7.outputs.digest }}
@@ -55,7 +55,7 @@ jobs:
         context: ./
         file: ./v2.Dockerfile
         push: true
-        tags: facundofarias/deploybot-ci-image:2.7.6
+        tags: facundofarias/deploybot-ci-image:ruby-2.7.6
 
     - name: Image digest 2.7.6
       run: echo ${{ steps.docker_build_2_7_6.outputs.digest }}
