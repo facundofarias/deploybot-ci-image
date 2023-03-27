@@ -29,7 +29,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: ./
-        file: ./v1.Dockerfile
+        file: ./ruby-2.0.0.Dockerfile
         push: true
         tags: facundofarias/deploybot-ci-image:ruby-2.0.0
 
@@ -41,7 +41,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: ./
-        file: ./v3.Dockerfile
+        file: ./ruby-2.3.7.Dockerfile
         push: true
         tags: facundofarias/deploybot-ci-image:ruby-2.3.7
 
@@ -53,7 +53,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         context: ./
-        file: ./v2.Dockerfile
+        file: ./ruby-2.7.6.Dockerfile
         push: true
         tags: facundofarias/deploybot-ci-image:ruby-2.7.6
 
