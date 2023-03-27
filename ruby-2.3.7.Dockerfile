@@ -1,4 +1,4 @@
-FROM debian:11
+FROM debian:9-slim
 
 ENV DEBIAN_FRONTEND=non-interactive
 
@@ -53,8 +53,8 @@ RUN apt-get --yes update && \
     apt-get install --yes \
       libmariadb-dev \
       libicu-dev \
-      libcurl4 \
-      libcurl4-openssl-dev \
+      libcurl3 \
+      libcurl3-openssl-dev \
       cmake \
       pkg-config \
       libssh2-1-dev \
