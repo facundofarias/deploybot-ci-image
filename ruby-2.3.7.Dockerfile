@@ -8,6 +8,7 @@ RUN apt-get --yes update && \
       ca-certificates \
       curl \
       git \
+      libgit2-dev \
       libssl-dev \
       libreadline-dev \
       zlib1g-dev \
