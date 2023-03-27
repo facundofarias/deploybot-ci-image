@@ -1,14 +1,22 @@
-FROM debian:10-slim
+FROM debian:8
 
 ENV DEBIAN_FRONTEND=non-interactive
 
+RUN rm /etc/apt/sources.list
+RUN echo "deb http://archive.debian.org/debian/ jessie main contrib non-free" | tee -a /etc/apt/sources.list
+RUN echo "deb-src http://archive.debian.org/debian/ jessie main contrib non-free" | tee -a /etc/apt/sources.list
+RUN echo "deb http://archive.debian.org/debian-security/ jessie/updates main contrib non-free" | tee -a /etc/apt/sources.list
+RUN echo "deb-src http://archive.debian.org/debian-security/ jessie/updates main contrib non-free" | tee -a /etc/apt/sources.list
+RUN echo "Acquire::Check-Valid-Until false;" | tee -a /etc/apt/apt.conf.d/10-nocheckvalid
+RUN echo 'Package: *\nPin: origin "archive.debian.org"\nPin-Priority: 500' | tee -a /etc/apt/preferences.d/10-archive-pin
+RUN apt-get update
+
 RUN apt-get --yes update && \
-    apt-get install --yes \
+    apt-get install --yes --allow-unauthenticated \
       build-essential \
       ca-certificates \
       curl \
       git \
-      libgit2-dev \
       libssl-dev \
       libreadline-dev \
       zlib1g-dev \
@@ -51,11 +59,11 @@ RUN gem install bundler -v 1.17.3
 
 # Install project dependencies
 RUN apt-get --yes update && \
-    apt-get install --yes \
-      libmariadb-dev \
+    apt-get install --yes --allow-unauthenticated \
+      libmysqlclient-dev \
       libicu-dev \
-      libcurl4 \
-      libcurl4-openssl-dev \
+      libcurl3 \
+      libcurl3-openssl-dev \
       cmake \
       pkg-config \
       libssh2-1-dev \
