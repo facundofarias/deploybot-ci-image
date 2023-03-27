@@ -8,7 +8,6 @@ RUN apt-get --yes update && \
       ca-certificates \
       curl \
       git \
-      libgit2-dev \
       libssl-dev \
       libreadline-dev \
       zlib1g-dev \
@@ -18,7 +17,7 @@ RUN apt-get --yes update && \
 
 # Install Node.js
 RUN curl -sSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - && \
-    VERSION=node_10.x && \
+    VERSION=node_8.x && \
     DISTRO="$(lsb_release -s -c)" && \
     echo "deb https://deb.nodesource.com/$VERSION $DISTRO main" | tee /etc/apt/sources.list.d/nodesource.list && \
     echo "deb-src https://deb.nodesource.com/$VERSION $DISTRO main" | tee -a /etc/apt/sources.list.d/nodesource.list && \
@@ -56,6 +55,7 @@ RUN apt-get --yes update && \
       libicu-dev \
       libcurl3 \
       libcurl3-openssl-dev \
+      libgit2-dev \
       cmake \
       pkg-config \
       libssh2-1-dev \
