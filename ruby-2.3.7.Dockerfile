@@ -55,7 +55,6 @@ RUN apt-get --yes update && \
       libicu-dev \
       libcurl3 \
       libcurl3-openssl-dev \
-      libgit2-dev \
       cmake \
       pkg-config \
       libssh2-1-dev \
