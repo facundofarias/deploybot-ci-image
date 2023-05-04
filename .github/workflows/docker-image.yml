@@ -67,7 +67,7 @@ jobs:
         context: ./
         file: ./node-alpine.Dockerfile
         push: true
-        tags: facundofarias/node-alpine:0.1
+        tags: facundofarias/node-alpine:0.2
 
     - name: Image digest node-lts
       run: echo ${{ steps.docker_build_node_alpine.outputs.digest }}
