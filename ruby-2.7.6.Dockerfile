@@ -6,6 +6,7 @@ RUN apt-get --yes update && \
     apt-get install --yes \
       build-essential \
       ca-certificates \
+      rsync \
       curl \
       git \
       libgit2-dev \

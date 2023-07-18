@@ -55,7 +55,7 @@ jobs:
         context: ./
         file: ./ruby-2.7.6.Dockerfile
         push: true
-        tags: facundofarias/deploybot-ruby-2.7.6:0.5-deb11
+        tags: facundofarias/deploybot-ruby-2.7.6:0.6-deb11
 
     - name: Image digest 2.7.6
       run: echo ${{ steps.docker_build_2_7_6.outputs.digest }}
